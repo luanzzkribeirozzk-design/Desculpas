@@ -827,12 +827,12 @@ function finalizeCheckout(){
   if(CO.type==='retirada'){
     msg+=`*ENDEREÇO:* ${LOJA_ADDR}\n`;
     msg+=`*TIPO:* 🏪 RETIRADA NA LOJA\n\n`;
-    msg+=`*VALOR TOTAL: R$ ${total},00*\n\n`;
+    msg+=`*VALOR TOTAL:* Qual o valor total junto com a entrega?\n\n`;
     msg+=`_Por favor, avise quando o pedido estiver pronto para eu ir buscar! 😊_`;
   }else{
     msg+=`*ENDEREÇO:* ${CO.endereco}\n`;
     msg+=`*TIPO:* 🛵 DELIVERY\n\n`;
-    msg+=`*VALOR TOTAL: R$ ${total},00*\n\n`;
+    msg+=`*VALOR TOTAL:* Qual o valor total junto com a entrega?\n\n`;
     msg+=`_Aguardo a confirmação do pedido e do tempo de entrega! 🛵_`;
   }
 
