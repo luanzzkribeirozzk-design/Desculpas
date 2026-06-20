@@ -220,6 +220,7 @@
     .footer-insta{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:.8rem;color:var(--muted);text-decoration:none}
     .footer-insta:hover{color:#a855f7}
 
+    .prod-thumb{width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(236,72,153,.15));border:1px solid rgba(168,85,247,.25);display:flex;align-items:center;justify-content:center;font-size:1.75rem;flex-shrink:0}
     @media(max-width:480px){.opts-grid{grid-template-columns:1fr 1fr}.size-grid{grid-template-columns:repeat(3,1fr)}}
   </style>
 </head>
@@ -358,7 +359,7 @@
       </div>
     </div>
     <div class="hd-card" onclick="openHotdog()">
-      <div style="font-size:2.8rem">🌭</div>
+      <div class="prod-thumb">🌭</div>
       <div style="flex:1">
         <div class="pc-name">Hot Dog Especial</div>
         <div class="pc-desc" style="margin:4px 0 10px">Pão 20cm + Salsicha · 5 acompanhamentos · 2 molhos</div>
@@ -378,7 +379,7 @@
       </div>
     </div>
     <div class="hd-card" onclick="openCuscuz()">
-      <div style="font-size:2.8rem">🌽</div>
+      <div class="prod-thumb">🌽</div>
       <div style="flex:1">
         <div class="pc-name">Cuscuz Tradicional Recheado</div>
         <div class="pc-desc" style="margin:4px 0 10px">Até 3 recheios · Nata opcional (+R$2,00)</div>
@@ -689,7 +690,8 @@ function startCheckout(){
 function renderCoStep1(){
   document.getElementById('checkout-content').innerHTML=`
     <div class="modal-header">
-      <div class="modal-title">📦 Como quer receber?</div>
+      <div class="modal-title" style="flex:1">📦 Como quer receber?</div>
+      <button class="close-btn" onclick="closeModal('m-checkout')">✕</button>
     </div>
     <div class="modal-body">
       <div class="co-type-card" onclick="selectCoType('retirada')">
@@ -733,10 +735,11 @@ function renderCoRetirada(){
   document.getElementById('checkout-content').innerHTML=`
     <div class="modal-header">
       <button class="back-btn" onclick="renderCoStep1()">‹</button>
-      <div>
+      <div style="flex:1">
         <div class="modal-title">🏪 Retirada na Loja</div>
         <div class="modal-sub">Você busca o pedido aqui na loja</div>
       </div>
+      <button class="close-btn" onclick="closeModal('m-checkout')">✕</button>
     </div>
     <div class="modal-body">
       <div class="step-label">Seu nome</div>
@@ -770,10 +773,11 @@ function renderCoDelivery(){
   document.getElementById('checkout-content').innerHTML=`
     <div class="modal-header">
       <button class="back-btn" onclick="renderCoStep1()">‹</button>
-      <div>
+      <div style="flex:1">
         <div class="modal-title">🛵 Delivery</div>
         <div class="modal-sub">Entregamos no seu endereço</div>
       </div>
+      <button class="close-btn" onclick="closeModal('m-checkout')">✕</button>
     </div>
     <div class="modal-body">
       <div class="step-label">Seu nome</div>
@@ -1040,7 +1044,7 @@ function addSalgado(n,q,p,emoji){ cart.push({type:'salgado',emoji,name:`${n} (${
 function renderSaladaGrid(){
   document.getElementById('salada-grid').innerHTML=SALADAS.map((s,i)=>`
     <div class="salada-card" onclick="openSalada(${i})">
-      <div style="font-size:1.9rem">${s.emoji}</div>
+      <div class="prod-thumb">${s.emoji}</div>
       <div class="sc-name">${s.name}</div>
       <div class="sc-variants">${s.variants.join(' · ')}</div>
       <div class="price-tags">${s.prices.map(p=>`<span class="price-tag">${p.ml}ml R$${p.p}</span>`).join('')}</div>
@@ -1050,7 +1054,7 @@ function renderSaladaGrid(){
 function renderMshakeGrid(){
   document.getElementById('mshake-grid').innerHTML=MS_SABORES.map(f=>`
     <div class="mshake-card" onclick="openMilkshake('${esc(f)}')">
-      <div style="font-size:2rem;margin-bottom:8px">${MS_EMOJI[f]||'🥤'}</div>
+      <div class="prod-thumb" style="margin:0 auto 10px">${MS_EMOJI[f]||'🥤'}</div>
       <div class="pc-name">${f}</div>
       <div class="price-tags" style="justify-content:center;margin-top:8px">
         <span class="price-tag">300ml R$18</span>
