@@ -319,27 +319,27 @@
       <div class="size-card" tabindex="0" onclick="openAcai(250,15,2,3,1)">
         <div class="size-vol">250ml</div>
         <div class="size-price">R$ 15,00</div>
-        <div class="size-info">2 Sabores<br>Até 3 Acomp.<br>1 Cobertura</div>
+        <div class="size-info">2 Sabores<br>Até 3 Acomp.<br>Até 1 Cobertura</div>
       </div>
       <div class="size-card" tabindex="0" onclick="openAcai(350,19,2,4,2)">
         <div class="size-vol">350ml</div>
         <div class="size-price">R$ 19,00</div>
-        <div class="size-info">2 Sabores<br>Até 4 Acomp.<br>2 Coberturas</div>
+        <div class="size-info">2 Sabores<br>Até 4 Acomp.<br>Até 2 Coberturas</div>
       </div>
       <div class="size-card" tabindex="0" onclick="openAcai(500,28,3,5,2)">
         <div class="size-vol">500ml</div>
         <div class="size-price">R$ 28,00</div>
-        <div class="size-info">3 Sabores<br>Até 5 Acomp.<br>2 Coberturas</div>
+        <div class="size-info">3 Sabores<br>Até 5 Acomp.<br>Até 2 Coberturas</div>
       </div>
       <div class="size-card" tabindex="0" onclick="openAcai(750,40,4,6,3)">
         <div class="size-vol">750ml</div>
         <div class="size-price">R$ 40,00</div>
-        <div class="size-info">4 Sabores<br>Até 6 Acomp.<br>3 Coberturas</div>
+        <div class="size-info">4 Sabores<br>Até 6 Acomp.<br>Até 3 Coberturas</div>
       </div>
       <div class="size-card" tabindex="0" onclick="openAcai(1000,53,5,6,3)">
         <div class="size-vol">1000ml</div>
         <div class="size-price">R$ 53,00</div>
-        <div class="size-info">5 Sabores<br>Até 6 Acomp.<br>3 Coberturas</div>
+        <div class="size-info">5 Sabores<br>Até 6 Acomp.<br>Até 3 Coberturas</div>
       </div>
     </div>
   </section>
@@ -853,7 +853,7 @@ function renderAcaiBody(){
     <div class="opts-grid">${SABORES.map(s=>optHtml(s,sabores,mxSab,'tgSab')).join('')}</div>
     <div class="step-label">Acompanhamentos <span class="step-count">${acomp.length}/${mxAcomp} <span style="color:var(--muted);font-weight:400;font-size:.65rem">(opcional)</span></span></div>
     <div class="opts-grid">${ACOMP.map(a=>optHtml(a,acomp,mxAcomp,'tgAcomp')).join('')}</div>
-    <div class="step-label">Coberturas <span class="step-count">${cobert.length}/${mxCob}</span></div>
+    <div class="step-label">Coberturas <span class="step-count">${cobert.length}/${mxCob} <span style="color:var(--muted);font-weight:400;font-size:.65rem">(opcional)</span></span></div>
     <div class="opts-grid">${COBERTURAS.map(c=>optHtml(c,cobert,mxCob,'tgCobert')).join('')}</div>
     <div class="step-label" style="margin-top:4px">Observações</div>
     <textarea class="note-input" id="acai-obs" rows="2" placeholder="Sem açúcar, capricha no leite em pó...">${AC.obs||''}</textarea>`;
